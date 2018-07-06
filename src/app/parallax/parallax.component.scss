@@ -1,0 +1,164 @@
+@import '../../variables';
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+#languages {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.wrapper {
+  /* The height needs to be set to a fixed value for the effect to work. */
+  height: 100vh;
+  /* The scaling of the images would add a horizontal scrollbar, so disable x overflow. */
+  overflow-x: hidden;
+  /* Enable scrolling on the page. */
+  overflow-y: auto;
+  /* Set the perspective to 2px. This is essentailly the simulated distance from the viewport to transformed objects.*/
+  perspective: 2px;
+}
+
+.section {
+  /* Needed for children to be absolutely positioned relative to the parent. */
+  position: relative;
+  /* The height of the container. Must be set, but it doesn't really matter what the value is. */
+  min-height: 30vh;
+
+  /* For text formatting. */
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 3em;
+
+  &.accent {
+    background-color: $accent-color;
+  }
+}
+
+.parallax::after {
+  /* Display and position the pseudo-element */
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  /* Move the pseudo-element back away from the camera,
+   * then scale it back up to fill the viewport.
+   * Because the pseudo-element is further away, it appears to move more slowly, like in real life. */
+  transform: translateZ(-1px) scale(2);
+  /* Force the background image to fill the whole element. */
+  background-size: 100%;
+  /* Keep the image from overlapping sibling elements. */
+  z-index: -1;
+
+  height: 100%;
+}
+
+.skills-text {
+  font-size: 1.3rem;
+  padding: 0 30px;
+}
+
+.parallax-inside {
+  align-self: center;
+}
+
+.parallax-inside-top::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 0;
+  border-left: 50vw solid transparent;
+  border-top: 7vw solid $accent-color;
+  border-right: 50vw solid transparent;
+  border-bottom: 0 solid transparent;
+  transition: border-bottom .3s ease;
+  z-index: 2;
+}
+
+.parallax-inside-bottom::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 0;
+  border-right: 50vw solid $accent-color;
+  border-bottom: 0 solid transparent;
+  border-left: 50vw solid $accent-color;
+  border-top: 7vw solid transparent;
+  transition: border-top .3s ease;
+  z-index: 2;
+}
+
+.parallax-inside-border::after {
+  content: "";
+  position: absolute;
+  background-color: $accent-color;
+  bottom: 0;
+  width: 100%;
+  height: 10%;
+  z-index: 2;
+}
+
+.parallax-inside-border::before {
+  content: "";
+  position: absolute;
+  background-color: $accent-color;
+  top: 0;
+  width: 100%;
+  height: 10%;
+  z-index: 2;
+}
+
+/* The styling for the static div. */
+.static {
+  background: $static-color;
+  min-height: 50vh;
+}
+
+/* Sets the actual background images to adorable kitties. This part is crucial. */
+.bg1::after {
+  background: url('http://globalmedicalco.com/photos/globalmedicalco/22/106711.jpg') no-repeat center 70%;
+}
+
+.bg2::after {
+  background: url('https://upload.wikimedia.org/wikipedia/commons/3/3d/Code-1076536.jpg') no-repeat center 70%;
+  background-size: cover;
+}
+
+.picture:hover {
+
+}
+
+.skills-container {
+  color: #1f1f1f;
+  font-size: 1.5rem;
+  top: 80vh;
+  min-height: 100px;
+  background-color: white;
+  border-radius: 20px;
+  z-index: 3;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+  animation: 1s cubic-bezier(0.18, 0.89, 0.32, 1.28) 0s 1 slideInFromLeft;
+}
+
+.icon-style {
+  font-size: 5rem;
+  color: $accent-color;
+}

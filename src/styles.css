@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.circle {
+  height: 15rem;
+  width: 15rem;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.circle-inner {
+  margin-top: 0.5rem;
+  height: 14rem;
+  width: 14rem;
+  background-image: url("assets/profilepic.jpg");
+  background-size: cover;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+body {
+  margin: 0;
+}
+
+h1, h2, h3, h4, div, span {
+  font-family: 'Varela Round', sans-serif;
+  font-weight: 300;
+}

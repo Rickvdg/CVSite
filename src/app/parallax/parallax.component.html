@@ -1,0 +1,52 @@
+<main class="wrapper">
+
+  <div id="languages">
+    <span (click)="language = 'nl'">🇳🇱</span>
+    <span (click)="language = 'en'">🇬🇧</span>
+  </div>
+
+  <section class="section static accent">
+    <div style="padding: 4rem; text-align: center;">
+      <h1>{{messages.title}}</h1><br/>
+      <h2>{{messages.welcome}}</h2><br/>
+      <div class="circle">
+        <div class="circle-inner"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section parallax bg2">
+    <div class="parallax-inside-border"></div>
+    <div class="row" style="margin: 0; z-index: 2;">
+      <div class="col-lg-1"></div>
+      <div class="col-lg-10">
+        <div class="skills-container">
+          <div class="row" style="padding: 1rem; margin: 0;">
+            <div class="col-md-4 skills-text" style="text-align: center">
+              <i class="material-icons icon-style">code</i><br/>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </div>
+            <div class="col-md-4 skills-text" style="text-align: center; border-left: 1px solid lightgray; border-right: 1px solid lightgray">
+              <i class="material-icons icon-style">perm_identity</i><br/>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </div>
+            <div class="col-md-4 skills-text" style="text-align: center">
+              <i class="material-icons icon-style">alternate_email</i><br/>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-1"></div>
+    </div>
+  </section>
+
+  <section class="section static accent">
+    <div style="margin: 1em; background-color: rgba(0,0,0,0.5); text-align: center; width: 100%; border-radius: 15px;">
+      <h1>Jobs:</h1>
+      <app-timeline></app-timeline>
+    </div>
+  </section>
+
+  <section class="section static accent" style="height: 10vh; min-height: 0;"></section>
+</main>

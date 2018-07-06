@@ -1,0 +1,19 @@
+<div class="timeline">
+  <div class="row" *ngFor="let job of jobsTest; let i = index" style="margin: 1rem 0;">
+    <div class="one" style="min-height: 100px; padding: 10px;">
+      {{job.start | date:'MMMM'}}
+      <div class="circle">{{job.start | date: 'yyyy'}}</div><br/>
+      <!--<div class="circle circle-sm" style="right: 1.4rem; bottom: 0; position: absolute;">-->
+        <!--2017-->
+      <!--</div>-->
+      <div class="line" *ngIf="i > 0"></div>
+    </div>
+    <div class="two" style="min-height: 100px;">
+      <div style="text-align: left; margin: 5px;">
+        Titel: {{job.title}}<br/>
+        Bedrijf: {{job.company}}<br/>
+        Omschrijving: {{job.description}}
+      </div>
+    </div>
+  </div>
+</div>
