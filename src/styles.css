@@ -19,6 +19,11 @@
   display: inline-block;
 }
 
+.profilepicture {
+  background-image: url("assets/profilepic.jpg");
+  background-size: cover;
+}
+
 body {
   margin: 0;
 }

@@ -1,38 +1,77 @@
-<main class="wrapper">
+<main class="wrapper" #scrollMe style="scroll-behavior: smooth">
 
   <div id="languages">
     <span (click)="language = 'nl'">🇳🇱</span>
     <span (click)="language = 'en'">🇬🇧</span>
   </div>
 
-  <section class="section static accent">
-    <div style="padding: 4rem; text-align: center;">
-      <h1>{{messages.title}}</h1><br/>
-      <h2>{{messages.welcome}}</h2><br/>
-      <div class="circle">
-        <div class="circle-inner"></div>
+  <section class="section profilepicture" style="height: 50vh;">
+
+    <div class="section dark" style="height: 100%; width: 50%; position: absolute; right: 0;">
+      <div style="padding: 4rem; text-align: center;">
+        <h1>{{messages.title}}</h1>
+        <h2>{{messages.welcome}}</h2>
+        <div class="circle">
+          <div class="circle-inner"></div>
+        </div>
       </div>
     </div>
+
+    <a href="#scrollTo" class="scrollNext">
+      <span style="left: 50%; position: absolute; display: flex; bottom: 0;">
+        <span class="scrollNext-circle">
+          <i class="material-icons" style="font-size: 2rem; color: white !important;">expand_more</i>
+        </span>
+      </span>
+    </a>
+
   </section>
+
+  <section class="section static accent" style="min-height: 10vh;" id="scrollTo"></section>
 
   <section class="section parallax bg2">
     <div class="parallax-inside-border"></div>
-    <div class="row" style="margin: 0; z-index: 2;">
+    <div class="row" style="margin: 0; z-index: 2; width: 100%;">
       <div class="col-lg-1"></div>
       <div class="col-lg-10">
         <div class="skills-container">
           <div class="row" style="padding: 1rem; margin: 0;">
             <div class="col-md-4 skills-text" style="text-align: center">
               <i class="material-icons icon-style">code</i><br/>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              <hr class="separator"/>
+              <div *ngFor="let code of codes; let i = index">
+                <span style="font-weight: bold">{{code.name}}</span><br/>
+                <span style="font-weight: lighter">{{code.skill}}</span><br/>
+                <hr *ngIf="i !== codes.length - 1"/>
+              </div>
             </div>
             <div class="col-md-4 skills-text" style="text-align: center; border-left: 1px solid lightgray; border-right: 1px solid lightgray">
               <i class="material-icons icon-style">perm_identity</i><br/>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              <hr class="separator"/>
+              Ik hou van muziek, festivals, slechte films, uitslapen, gamen en volleybal.<hr/>
+              Ik heb deze website zelf gemaakt dus neem als je wilt een kijkje op de Github pagina.<hr/>
+              Wil je me aannemen? Stuur maar een mailtje en ik probeer z.s.m. een reactie te sturen.
             </div>
             <div class="col-md-4 skills-text" style="text-align: center">
               <i class="material-icons icon-style">alternate_email</i><br/>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              <hr class="separator"/>
+              <!--<table class="center" style="text-align: left;">-->
+                <!--<tr>-->
+                  <!--<th>Email:</th>-->
+                  <!--<th>main@email.com</th>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                  <!--<th>Tel:</th>-->
+                  <!--<th>+31 6 0123465789</th>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                  <!--<th><a href="/">LinkedIn</a></th>-->
+                <!--</tr>-->
+              <!--</table>-->
+              <div class="row">
+                <div class="col-lg-4">Email:</div>
+                <div class="col-lg-8" style="text-overflow: ellipsis; overflow: hidden;">main@email.com</div>
+              </div>
             </div>
           </div>
         </div>
@@ -41,8 +80,8 @@
     </div>
   </section>
 
-  <section class="section static accent">
-    <div style="margin: 1em; background-color: rgba(0,0,0,0.5); text-align: center; width: 100%; border-radius: 15px;">
+  <section class="section static accent" style="padding: 1em;">
+    <div style="padding: 0 1em; background-color: rgba(0,0,0,0.5); text-align: center; border-radius: 15px;">
       <h1>Jobs:</h1>
       <app-timeline></app-timeline>
     </div>
