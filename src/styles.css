@@ -4,9 +4,10 @@
 .circle {
   height: 15rem;
   width: 15rem;
-  background-color: #bbb;
+  background-color: white;
   border-radius: 50%;
   display: inline-block;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
 .circle-inner {
